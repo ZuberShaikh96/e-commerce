@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>favstore</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-card *ngFor="let data of favStore">
+		<ion-avatar>
+
+			<img [src]="data.s_imageUrl">
+
+		</ion-avatar>
+		{{data.s_name}}
+
+		
+		<button ion-button small outline   (click)="removeFavStore(data.s_id)">
+          <ion-icon name="heart-outline"  ></ion-icon>
+        </button>
+
+	</ion-card>
+	<ion-card *ngIf="!favStore">
+
+		<h1>Nothing in FavStore</h1>
+
+	</ion-card>
+
+</ion-content>

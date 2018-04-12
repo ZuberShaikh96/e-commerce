@@ -1,0 +1,39 @@
+<ion-content class="getstart">
+  <ion-card>     
+    <ion-slides  *ngIf="sliderImg && sliderImg.length" zoom="true"
+    pager="true" autoplay="2000" loop="true" speed="2000" autoplayDisableOnInteraction = "false">
+      <ion-slide  *ngFor=" let image of sliderImg">
+            <img src="{{image.img1}}"/>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col padding>
+        <p>Ibuddi is a online grocery shopping.It help us to easily buy grocery. </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col><button ><img src="assets/imgs/fashion.jpg"></button></ion-col>
+        <ion-col><button ><img src="assets/imgs/woman1.jpg"></button></ion-col>
+    </ion-row>
+      
+    <ion-row>    
+      <ion-card>     
+          <ion-slides  *ngIf="sliderImg && sliderImg.length" zoom="true" effect="coverflow" autoplay="2000" loop="true" speed="2000" autoplayDisableOnInteraction = "false">
+            <ion-slide  *ngFor=" let image of sliderImg">
+               <img src="{{image.img2}}"/>
+           </ion-slide>
+          </ion-slides>
+      </ion-card>  
+    </ion-row>
+  </ion-card>
+
+  <ion-fab right bottom padding>
+      <button ion-fab color="lighter" (click)="opnPage()" edge>
+        <ion-icon md="md-search" name="search" ios="ios-search-outline"> </ion-icon>
+      </button>
+  </ion-fab>
+
+</ion-content>

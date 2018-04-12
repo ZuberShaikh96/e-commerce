@@ -1,0 +1,129 @@
+<ion-content >
+  <div *ngIf="selectedItem">
+  	<ion-card no-padding>
+      	<ion-row>
+          <ion-slides  *ngIf="sliderImage && sliderImage.length" zoom="true" pager="true" autoplay="2000" loop="true" speed="2000" autoplayDisableOnInteraction = "false">
+            <ion-slide *ngFor="let image of sliderImage">
+              <img [src]="image.img"/>
+            </ion-slide>
+          </ion-slides>
+            <ion-col col-10 push-10>
+              <ion-icon name="md-heart-outline" (click)="addFavStore()" color="primary">
+              </ion-icon> 
+            </ion-col>
+        </ion-row>
+        <ion-row>
+               
+        </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header><b>Categories</b></ion-card-header>
+      
+        <ion-slides slidesPerView="2">
+          <ion-slide *ngFor="let item of selectedItem?.category"
+          (ionSlideDidChange)="changeSlide()">
+            <ion-card (click)="getProducts(item)">
+              <ion-avatar>
+                <img [src]="item.categoryIcon" />
+              </ion-avatar>
+              <p>{{item.categoryName}}</p>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+
+    </ion-card>
+  </div>
+  <div>
+    <ion-card *ngFor="let item of items?.products">
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-avatar>
+             <img src="{{item.p_imageUrl}}">
+            </ion-avatar>
+          </ion-col>
+          <ion-col>
+            {{item.p_name}}
+            <ion-item>
+              <ion-select>
+                <ion-option *ngFor="let i of item?.p_measurement" [value]="i.unit">
+                  {{i.unit}}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-row><ion-col col-3 push-2>
+              <ion-icon name="md-heart-outline" color="primary" (click)="addToWishlist(item)"></ion-icon></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>   <!-- *ngIf="id"-->  
+
+                <button ion-button small outline round *ngIf="item?.p_quantity > 0" (click)="removeFromCart(item)">
+                  <ion-icon name="remove"></ion-icon>
+                </button>
+
+                <button ion-button small outline round *ngIf="item?.p_quantity > 0" >{{item.p_quantity}}             
+                </button>
+<!--                 <button ion-button outline round (click)="addToCart(item)">
+                  <ion-icon name="add"></ion-icon>
+                </button> -->
+              <div class="imgz">
+                  <img src="assets/icon/add1.png" (click)="addToCart(item)" />
+              </div>    
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-card>
+  </div>
+
+
+<!--*Saajid*-->
+  <ion-card>
+      <ion-row no-padding>
+        <ion-col col-8 push-2 >
+          <button  ion-button block round outline id="more-details" color="positive" (click)="show=!show" > {{show ? 'hide' : 'About Store'}}
+          </button>
+        </ion-col>
+      </ion-row>
+  <div *ngIf="show">
+    <ion-card>
+
+       <ion-row>
+         <ion-col col-1>
+              <ion-icon name="md-pin" ></ion-icon>
+         </ion-col>
+
+        <ion-col col-11>
+            <p>{{selectedItem.s_address}}</p>
+        </ion-col >
+       </ion-row>
+      
+       <ion-row (click)="dialer()">
+            <ion-col col-1>
+              <ion-icon name="md-call" ></ion-icon>
+            <!-- <h3><b>Mob:</b></h3> -->
+            </ion-col>
+
+            <ion-col col-5>
+            <p>{{selectedItem.s_contact}}</p>
+           </ion-col >
+       </ion-row>
+
+       <ion-row (click)="showDirection()">
+           <ion-col col-1>
+              <ion-icon name="md-navigate" ></ion-icon>
+           </ion-col>
+
+           <ion-col col-5>
+              <p>Navigate Route</p>
+           </ion-col >
+       </ion-row>
+    </ion-card>
+  </div>
+</ion-card>
+</ion-content>
+

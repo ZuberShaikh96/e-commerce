@@ -1,0 +1,2 @@
+Last commit by remith
+Remith : Fixed FB login issue, added new fb id and app id(under ibuddi profile)

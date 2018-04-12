@@ -1,0 +1,21 @@
+
+    generate your private key
+    $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+
+    get SHA1 from the key that you generated above
+    $ keytool -exportcert -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore
+
+    use that SHA1 here to get all your necesarry token, IDs or keys --> https://developers.google.com/mobile/add?platform=android&cntapi=signin
+
+    release build your app to generate an unsigned apk file
+    $ cordova build android --release
+
+    jar sign that apk file with the above keystore
+    $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
+
+Reference:
+http://ionicframework.com/docs/v1/guide/publishing.html
+
+https://forum.ionicframework.com/t/google-login-error-10/93230/5
+
+

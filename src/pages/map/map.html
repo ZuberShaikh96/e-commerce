@@ -1,0 +1,22 @@
+
+<ion-content>
+ <!-- <ion-spinner icon="spiral" class="spinner-energized"></ion-spinner> -->
+  <div #map id="map"></div>
+    <ion-slides loop="true" no-padding>
+      <ion-slide *ngFor="let ldata of slide" (ionSlideDidChange)="swipe(ldata)">
+        <ion-card>
+            <ion-card-title text-center color="ibuddi">
+                    {{ldata.s_name}}
+            </ion-card-title>
+          <ion-row>
+            <ion-col>
+              <img src="{{ldata.s_imageUrl}}">
+            </ion-col>
+            <ion-col>
+              <p>{{ldata.s_address}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+       </ion-slide>
+     </ion-slides>
+</ion-content>

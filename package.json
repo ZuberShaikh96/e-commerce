@@ -1,0 +1,96 @@
+{
+  "name": "ibuddi",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "http://ionicframework.com/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "5.0.3",
+    "@angular/compiler": "5.0.3",
+    "@angular/compiler-cli": "5.0.3",
+    "@angular/core": "5.0.3",
+    "@angular/forms": "5.0.3",
+    "@angular/http": "5.0.3",
+    "@angular/platform-browser": "5.0.3",
+    "@angular/platform-browser-dynamic": "5.0.3",
+    "@ionic-native/call-number": "^4.5.3",
+    "@ionic-native/core": "4.4.0",
+    "@ionic-native/device": "^4.6.0",
+    "@ionic-native/diagnostic": "^4.6.0",
+    "@ionic-native/facebook": "^4.6.0",
+    "@ionic-native/geolocation": "^4.5.3",
+    "@ionic-native/google-maps": "^4.5.3",
+    "@ionic-native/google-plus": "^4.6.0",
+    "@ionic-native/launch-navigator": "^4.5.3",
+    "@ionic-native/location-accuracy": "^4.6.0",
+    "@ionic-native/network": "^4.5.3",
+    "@ionic-native/splash-screen": "4.4.0",
+    "@ionic-native/status-bar": "4.4.0",
+    "@ionic/storage": "2.1.3",
+    "call-number": "^1.0.1",
+    "cordova-android": "7.0.0",
+    "cordova-plugin-actionsheet": "^2.3.3",
+    "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-dialogs": "^2.0.1",
+    "cordova-plugin-facebook4": "git+https://github.com/jeduan/cordova-plugin-facebook4.git",
+    "cordova-plugin-geolocation": "^4.0.1",
+    "cordova-plugin-googlemaps": "^2.2.9",
+    "cordova-plugin-googleplus": "^5.2.3",
+    "cordova-plugin-ionic-webview": "^1.1.19",
+    "cordova-plugin-request-location-accuracy": "^2.2.2",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-uniquedeviceid": "^1.3.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova.plugins.diagnostic": "^4.0.5",
+    "firebase": "^4.12.1",
+    "ionic-angular": "3.9.2",
+    "ionic2-super-tabs": "^4.2.2",
+    "ionicons": "3.0.0",
+    "mx.ferreyra.callnumber": "0.0.2",
+    "rxjs": "5.5.2",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.18"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.1.8",
+    "typescript": "2.4.2"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+      },
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "mx.ferreyra.callnumber": {},
+      "cordova-plugin-googlemaps": {
+        "API_KEY_FOR_ANDROID": "AIzaSyCFvcrod4Sa8bDWJ69URNJhV27uzBut4LI",
+        "API_KEY_FOR_IOS": "AIzaSyBkBgDba2twmQDs7kan5HsCR8OGxvD-5qs",
+        "PLAY_SERVICES_VERSION": "11.8.0",
+        "ANDROID_SUPPORT_V4_VERSION": "24.1.0"
+      },
+      "cordova-plugin-whitelist": {},
+      "call-number": {},
+      "cordova-plugin-request-location-accuracy": {},
+      "cordova-plugin-uniquedeviceid": {},
+      "cordova.plugins.diagnostic": {},
+      "cordova-plugin-googleplus": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "1557494864383609",
+        "APP_NAME": "ibuddi"
+      }
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}

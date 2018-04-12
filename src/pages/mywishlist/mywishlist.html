@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>mywishlist</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<ion-card *ngFor="let item of wishlistItems">
+          <ion-item>
+            <ion-row>
+              <ion-col>
+                {{item.p_name}}
+              </ion-col>            
+            </ion-row>
+          </ion-item>
+          <button ion-button small outline >
+              <ion-icon name="heart-outline"  (click)="removeFromWishlist(item)"></ion-icon>
+          </button>
+      </ion-card>
+
+
+    <ion-card *ngIf="!wishlistItems">
+    	<ion-item>
+    		Nothing in Wishlist
+    	</ion-item>
+    </ion-card>
+
+
+</ion-content>

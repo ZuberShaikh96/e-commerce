@@ -1,0 +1,31 @@
+shreewebs@ShreeWebs-PC3:~/Documents/ibuddi$ keytool -genkey -v -keystore my-key.keystore -alias myalias -keyalg RSA -keysize 2048 -validity 10000
+Enter keystore password:  android
+Re-enter new password: android
+What is your first and last name?
+  [Unknown]:  ibuddi
+What is the name of your organizational unit?
+  [Unknown]:  ibuddi
+What is the name of your organization?
+  [Unknown]:  ibuddi
+What is the name of your City or Locality?
+  [Unknown]:  Nashik
+What is the name of your State or Province?
+  [Unknown]:  Maharashtra
+What is the two-letter country code for this unit?
+  [Unknown]:  IN
+Is CN=ibuddi, OU=ibuddi, O=ibuddi, L=Nashik, ST=Maharashtra, C=IN correct?
+  [no]:  yes
+
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 10,000 days
+	for: CN=ibuddi, OU=ibuddi, O=ibuddi, L=Nashik, ST=Maharashtra, C=IN
+Enter key password for <myalias>
+	(RETURN if same as keystore password):  
+Re-enter new password: 
+[Storing my-key.keystore]
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore my-key.keystore -destkeystore my-key.keystore -deststoretype pkcs12".
+
+Firebase Dynamic Url
+
+https://v928u.app.goo.gl
