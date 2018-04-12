@@ -1,0 +1,101 @@
+<ion-content no-padding >
+<ion-navbar>
+	<ion-header>
+	    <ion-title>productdetails</ion-title>
+	</ion-header>
+</ion-navbar>
+
+
+		<ion-card style="height:50%;">
+		<ion-slides  *ngIf="sliderImages && sliderImages.length" zoom="true" autoplay="2000" loop="true" speed="2000" autoplayDisableOnInteraction = "false">
+            <ion-slide *ngFor="let image of sliderImages">
+              <img [src]="image.img"/>
+            </ion-slide>
+          </ion-slides> 
+          <h1 style="text-align: center;">{{selectedProduct.p_name}}</h1>  
+		</ion-card>
+
+		<ion-card>
+				<ion-row>
+					<ion-col col-2 push-1>
+						<ion-icon (click)="showDetails('one')">
+							<img src="assets/imgs/rule.png">
+						</ion-icon>
+					</ion-col>
+					<ion-col col-3 push-2 >
+						<ion-icon (click)="showDetails('two')">
+							<img src="assets/imgs/delivery.png">
+						</ion-icon >
+					</ion-col>
+					<ion-col col-3 push-2>
+						<ion-icon (click)="showDetails('three')">
+							<img src="assets/imgs/upload.png">
+						</ion-icon>
+					</ion-col>
+					<ion-col col-3 push-2 >
+						<ion-icon (click)="showDetails('four')">
+							<img src="assets/imgs/scale.png">
+						</ion-icon>
+					</ion-col>
+				</ion-row>
+
+				<ion-row *ngIf='data'>
+					<div *ngFor='let datas of data'>
+						<button ion-button small round>{{datas.unit}}</button>
+					</div>
+				</ion-row>
+				<ion-row *ngIf='data1'>
+					<button ion-button small round>{{data1.data}}</button>
+				</ion-row>
+				<ion-row *ngIf='data2'>
+					{{data2.data}}
+				</ion-row>
+		</ion-card>
+
+		<ion-card>
+			<ion-row>
+			{{selectedProduct.p_description}}
+			</ion-row>
+		</ion-card>
+
+		<ion-card>
+			<div *ngIf="show">
+      			<ion-card>
+					<ion-row>
+						<button ion-button small outline (click)="removeFromCart(item)">
+		             		 <ion-icon name="remove"></ion-icon>
+		            	</button>
+			            <button ion-button small outline>	             
+			            </button>
+			            <button ion-button small outline (click)="addToCart(item)">
+			              <ion-icon name="add"></ion-icon>
+			            </button>
+					</ion-row>
+				</ion-card>
+
+				<ion-card>
+					<h1>Product Details:</h1>
+
+					<p>Type	Orange drink
+						Manufacturer	PepsiCo
+						Country of origin	Spain
+						Introduced	~1959
+						Related products	Fanta
+						Pepsi
+						Sunkist (soft drink)</p>
+				</ion-card>
+			</div>
+
+			<ion-row no-padding>		        
+			  <button  ion-button round outline  color="positive" (click)="show=!show" > {{show ? 'Hide' : 'More'}}
+			          	<!-- <ion-icon name="add" *ngIf="!show"></ion-icon>
+			          	<ion-icon name="remove" *ngIf="show"></ion-icon> -->
+			  </button>
+      		</ion-row>
+		</ion-card>
+
+		
+
+		
+			
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let item of cartItems">
+          <ion-item>
+            <ion-row>
+
+              <ion-col>
+                <img src="{{item.p_imageUrl}}">
+              </ion-col>
+              <ion-col>
+                <ion-row>
+                {{item.p_name}}
+              </ion-row>
+              <ion-row>
+                <ion-item >
+                  <select>
+                    <option >250ml</option>
+                    <option >500ml</option>
+                    <option >1-ltr</option>
+                    <option >1.25-ltr</option>
+                  </select>
+                </ion-item>
+              </ion-row>
+              </ion-col>
+            </ion-row>
+                 
+            
+            <ion-row>
+              <ion-col>
+               <button ion-button small outline (click)="removeFromCart(item)">
+                  <ion-icon name="remove" ></ion-icon>
+              </button>
+
+              <button ion-button small outline>
+                  {{item.p_quantity}}
+              </button>
+
+              <button ion-button small outline>
+                  <ion-icon name="add"></ion-icon>
+              </button>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+
+      </ion-card>
+
+      <div *ngIf="cartItems">
+      <ion-col col-9 push-3>    
+      <button ion-button round outline (click)="gotoCheckout()">Checkout</button>
+      </ion-col>
+      </div>
+
+    <ion-card *ngIf="!cartItems">
+      <ion-item>
+        Nothing in Cart
+      </ion-item>
+    </ion-card>
+
+
+</ion-content>

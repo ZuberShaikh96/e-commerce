@@ -1,0 +1,100 @@
+<ion-content padding>
+  <div *ngIf="!userProfile">
+    <div class="content">
+      <img src="assets/imgs/logo.png" />
+    </div>
+      <form no-validate [formGroup]="user" >
+        <ion-item>
+          <ion-label><ion-icon ios="ios-mail-outline" md="md-mail" color="primary"></ion-icon></ion-label>
+          <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><ion-icon ios="ios-key-outline" md="md-key" color="primary"></ion-icon></ion-label>
+          <ion-input type="password" placeholder="Password" formControlName="pswd"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+        <ion-row>
+          <ion-col>           
+                <button ion-button type="submit" (click)= "login()" full round>Login</button>
+          </ion-col>
+          <ion-col>           
+                <button ion-button type="reset" full round>Reset!</button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      
+          <button ion-button round outline block (click)="facebookLogin()" color="facebook">Facebook</button>
+ 
+
+
+
+          <button ion-button round outline block (click)="openSignup()">Register</button>
+
+
+
+<!--  <ion-row>
+        <ion-col>
+          <button ion-button round outline block (click)="facebookLogin()" color="facebook">Facebook</button>
+        </ion-col>
+       -->
+<!--         <ion-col>
+          <button ion-button round outline block (click)="googleLogin()" color="facebook">Google</button>
+        </ion-col> 
+      </ion-row>-->
+      
+
+          <button ion-button round outline block (click)="gotoCart()">MY Cart</button>
+
+      </form>
+  </div>
+ 
+  <div *ngIf="userProfile">
+    <ion-card>
+      <p padding float-right (click)="logout()">
+        <ion-icon name="log-out" ></ion-icon>Logout</p>
+      <ion-card-header>{{userProfile.name}}</ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <img [src]="userProfile.picture"/>
+            </ion-col>
+            <ion-col>
+              <p *ngIf="userProfile.email">{{userProfile.email}}</p>
+              <p *ngIf="userProfile.gender">{{userProfile.gender}}</p>
+              <p *ngIf="userProfile.role">Role: {{userProfile.role}}</p>
+              <p *ngIf="userProfile.provider">
+              Auth Provider:{{userProfile.provider}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <!-- <ion-row>
+      <ion-col>
+        <button ion-button round outline block dark (click)="changeTheme('theme-dark')">Dark</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button round outline block (click)="changeTheme('')">Default</button>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row>
+      <ion-col>
+        <button ion-button round outline block dark  (click)="gotoMyCart()">My cart</button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button round outline block dark  (click)="gotoMywishlist()"> My Wishlist</button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button round outline block dark  (click)="gotoMyFavStore()">FavStore</button>
+      </ion-col>
+
+    </ion-row>
+
+  </div>
+</ion-content>

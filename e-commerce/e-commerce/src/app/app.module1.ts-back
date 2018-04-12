@@ -1,0 +1,76 @@
+import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { MyApp } from './app.component';
+import { SuperTabsModule} from 'ionic2-super-tabs';
+
+import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
+import { ProfilePageModule } from '../pages/profile/profile.module';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { SignupPageModule } from '../pages/signup/signup.module';
+import { SearchPageModule } from '../pages/search/search.module'
+import { ProductlistPageModule } from '../pages/productlist/productlist.module';
+import { ProductdetailsPageModule } from '../pages/productdetails/productdetails.module';
+/*Saajid */
+import { CallNumber } from '@ionic-native/call-number';
+import { Geolocation } from '@ionic-native/geolocation';
+import { DetailsPageModule } from '../pages/details/details.module';
+import { MapPageModule } from '../pages/map/map.module';
+import { ListPageModule } from '../pages/list/list.module';
+
+import { LocationsProvider } from '../providers/locations/locations';
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
+import { GoogleMaps } from '@ionic-native/google-maps';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { RestProvider } from '../providers/rest/rest';
+import { AppState } from './app.global';
+
+import { UserPageModule } from '../pages/user/user.module';
+
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage,
+    TabsPage
+  ],
+  imports: [
+    BrowserModule,
+    SuperTabsModule.forRoot(),
+    IonicModule.forRoot(MyApp),
+    ProfilePageModule,
+    HttpModule,
+    HttpClientModule,
+    SignupPageModule,
+    SearchPageModule,
+    ListPageModule,
+    MapPageModule,
+    DetailsPageModule,
+    ProductlistPageModule,
+    ProductdetailsPageModule,
+    UserPageModule
+
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    TabsPage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider,
+    Geolocation,
+    CallNumber,
+    LocationsProvider,
+    AppState,
+    LocationAccuracy,
+    GoogleMaps
+  ]
+})
+export class AppModule {}

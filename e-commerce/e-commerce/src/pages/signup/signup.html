@@ -1,0 +1,58 @@
+<ion-content class="no-scroll getstart" padding>
+  <ion-col>
+    <img src="assets/imgs/logo.png">
+  </ion-col>
+<form novalidate  [formGroup]=" user " >
+<div class="input">
+<ion-item class='fields'>
+  <ion-label>
+    <ion-icon ios="ios-contact-outline" md="md-contact" color="ibuddi">
+    </ion-icon>
+  </ion-label>
+  <ion-input type="text" placeholder="Full Name" formControlName="name">
+  </ion-input>
+</ion-item>
+
+<ion-item class='fields'>
+  <ion-label>
+    <ion-icon ios="ios-mail-outline" md="md-mail" color="ibuddi">
+    </ion-icon>
+  </ion-label>
+  <ion-input type="text" placeholder="Email" formControlName="email">
+  </ion-input>
+</ion-item>
+
+<ion-item class='fields'>
+  <ion-label >
+    <ion-icon ios="ios-call-outline" md="md-call" color="ibuddi">
+    </ion-icon>
+  </ion-label>
+  <ion-input type="number" placeholder="Mobile No " formControlName="phone_no"></ion-input>
+</ion-item>
+
+<ion-item class='fields'>
+  <ion-label ><ion-icon ios="ios-lock-outline" md="md-lock" color="ibuddi"></ion-icon></ion-label>
+  <ion-input type="password" placeholder="Password" formControlName="pswd"></ion-input>
+</ion-item>
+
+<ion-item class='fields'>
+  <ion-label >
+    <ion-icon ios="ios-lock-outline" md="md-lock" color="ibuddi">
+    </ion-icon>
+  </ion-label>
+  <ion-input type="password" placeholder="Confirm Password" formControlName="c_pswd">
+  </ion-input>
+</ion-item>
+
+</div><br>
+<ion-row padding>
+  <input type="checkbox">&nbsp;&nbsp;Agree to the &nbsp;<font color="red"> terms and Conditions</font><br>
+</ion-row><br>
+
+  <ion-row>    
+    <button ion-button type="submit" (click)=" signupUser() " color="ibuddi" full round>Create Account</button>
+  </ion-row>          
+
+</form>
+
+</ion-content>
